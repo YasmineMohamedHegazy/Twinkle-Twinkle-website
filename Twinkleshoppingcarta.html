@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twinkle shopping cart</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Myv9Q2cdWghu/ED1dOT/ur2R84EsnIzVYh7RRcnY1cwF2mL3T1X4L3myeYU3R8KnHc6jJdc5yvLq7e2++TKg6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+* {
+   box-sizing: border-box;
+   padding-left: 15px;
+   padding-right: 15px;
+   margin: 0;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f5f5f5;
+   color: #333;
+}
+
+.topnav {
+   overflow: hidden;
+   background-color: white;
+   padding: 10px;
+   display: flex;
+   justify-content: center; /* Center align the items */
+   align-items: center;
+}
+
+.topnav ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   display: flex;
+}
+
+.topnav li {
+   margin: 0 10px; /* Adjust margin for spacing */
+}
+
+.topnav a {
+   display: block;
+   color: black;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+.topnav a:hover {
+   background-color: #CCCCFF;
+   color: white;
+}
+
+.login-link {
+   float: right;
+   margin-right: 20px;
+}
+
+.nav-search-bar {
+   display: none;
+   position: absolute;
+   top: 60px;
+   right: 20px;
+   background-color: #fff;
+   border: 1px solid #ccc;
+   padding: 10px;
+   z-index: 999;
+}
+
+.nav-search-bar.active {
+   display: block;
+}
+
+.nav-search-bar form {
+   position: relative;
+}
+
+.nav-search-bar input[type="text"] {
+   width: 200px;
+   padding: 8px;
+   border: none;
+   border-bottom: 1px solid #ccc;
+   outline: none;
+   font-size: 14px;
+}
+
+.nav-search-bar span {
+   position: absolute;
+   right: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+   cursor: pointer;
+}
+
+/* Adjusting the search icon */
+#quik-search-btn {
+   background-color: transparent; /* Transparent background */
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+   color: black;
+   padding: 5px 10px; /* Example padding */
+}
+
+.catalog-menu {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+.catalog-menu.active {
+   display: block;
+}
+
+.catalog-menu ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.catalog-menu ul li {
+   padding: 10px 15px;
+}
+
+.catalog-menu ul li a {
+   text-decoration: none;
+   color: black;
+}
+
+.catalog-menu ul li a:hover {
+   background-color: #f1f1f1;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f5f5f5;
+   color: #333;
+}
+
+.container {
+   max-width: 800px;
+   margin: 20px auto;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.row {
+   display: flex;
+   justify-content: space-between;
+}
+
+.column {
+   flex: 0 0 calc(33.33% - 20px);
+   margin-right: 20px;
+   padding: 10px;
+   background-color: #f2f2f2;
+   text-align: center;
+}
+
+.column img {
+   width: 100%;
+   height: auto;
+   border: 3px solid #555;
+}
+
+.column h3 {
+   color: Black;
+   margin-top: 10px;
+}
+
+.column button {
+   background-color: beige;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin-top: 10px;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+.column button:hover {
+   background-color: black;
+}
+
+.footer {
+   background-color: #F5F5F5;
+   padding: 20px;
+   text-align: center;
+   clear: both;
+   margin-top: 20px;
+}
+
+/* Search bar styles */
+.nav-search-bar {
+   display: none;
+   position: absolute;
+   top: 60px;
+   right: 20px;
+   background-color: #fff;
+   border: 1px solid #ccc;
+   padding: 10px;
+   z-index: 999;
+}
+
+.nav-search-bar.active {
+   display: block;
+}
+
+.nav-search-bar form {
+   position: relative;
+}
+
+.nav-search-bar input[type="text"] {
+   width: 200px;
+   padding: 8px;
+   border: none;
+   border-bottom: 1px solid #ccc;
+   outline: none;
+   font-size: 14px;
+}
+
+.nav-search-bar span {
+   position: absolute;
+   right: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+   cursor: pointer;
+}
+
+.catalog-menu {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+.catalog-menu.active {
+   display: block;
+}
+
+.catalog-menu ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.catalog-menu ul li {
+   padding: 10px 15px;
+}
+
+.catalog-menu ul li a {
+   text-decoration: none;
+   color: black;
+}
+
+.catalog-menu ul li a:hover {
+   background-color: #f1f1f1;
+}
+
+/* Cart Styles */
+.cart-item {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   border-bottom: 1px solid #ccc;
+}
+
+.cart-item img {
+   width: 80px;
+   height: auto;
+   margin-right: 20px;
+}
+
+.cart-item-info {
+   flex: 1;
+   text-align: left;
+}
+
+.cart-summary {
+   margin-top: 20px;
+}
+
+.cart-summary h3 {
+   margin-bottom: 10px;
+   color: black;
+}
+
+.cart-summary-table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-bottom: 20px;
+}
+
+.cart-summary-table th,
+.cart-summary-table td {
+   border: 1px solid #ccc;
+   padding: 8px;
+   text-align: center;
+}
+
+.cart-summary-total {
+   text-align: right;
+   font-size: 18px;
+   font-weight: bold;
+   margin-top: 10px;
+}
+
+.cart-buttons {
+   text-align: center;
+   margin-top: 20px;
+}
+
+.cart-buttons a {
+   display: inline-block;
+   background-color: #bcbce5;
+   color: white;
+   text-decoration: none;
+   padding: 10px 20px;
+   margin-right: 10px;
+   border-radius: 5px;
+}
+
+.cart-buttons a:hover {
+   background-color: #000055;
+   color:white;
+}
+
+/* Quantity adjustment buttons */
+.quantity-adjust {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.quantity-adjust button {
+   background-color: #f2f2f2;
+   color: black;
+   border: none;
+   padding: 5px 10px;
+   margin: 0 5px;
+   cursor: pointer;
+}
+
+.quantity-adjust button:hover {
+   background-color: #ccc;
+}
+
+/* Remove button style */
+.btn-remove {
+   background-color: #ff6347; /* Coral red */
+   color: white;
+   border: none;
+   padding: 8px 16px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 14px;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+.btn-remove:hover {
+   background-color: #e74c3c; /* Darker shade of red on hover */
+}
+
+.footer {
+   background-color: #F5F5F5;
+   padding: 20px;
+   text-align: center;
+   clear: both;
+   margin-top: 20px;
+}
+
+.footer-content {
+   max-width: 800px;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.footer-section {
+   flex: 1 1 300px;
+   margin-bottom: 20px;
+   text-align: left;
+}
+
+.footer-section h3 {
+   color: black;
+   margin-bottom: 10px;
+}
+
+.footer-section p {
+   color: #666;
+   line-height: 1.6;
+}
+
+.footer-section ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.footer-section ul li {
+   margin-bottom: 8px;
+}
+
+.footer-section a {
+   color: #333;
+   text-decoration: none;
+}
+
+.footer-section a:hover {
+   color: #000;
+}
+
+.footer-bottom {
+   margin-top: 20px;
+   font-size: 14px;
+   color: #666;
+}
+</style>
+</head>
+<body>
+  <div class="topnav">
+     <ul>
+        <li><a href="Twinklehomepagea.html">Homepage</a></li>
+        <li><a href="#" id="catalog-link">Shop</a>
+           <div class="catalog-menu" id="catalog-menu">
+              <ul>
+                 <li><a href="Menshopa.html">Men</a></li>
+                 <li><a href="Twinklewomenshopa.html">Women</a></li>
+                 <li><a href="Twinklekidsshopa.html">Kids</a></li>
+              </ul>
+           </div>
+        </li>
+        <li><a href="Twinkleaboutusa.html">About Us</a></li>
+        <li><a href="Twinklecontactusa.html">Contact Us</a></li>
+        <li><a href="Twinkleshoppingcarta.html">Shopping Cart</a></li>
+        <li><a href="Twinkleordertrackinga.html">My Orders</a></li>
+     </ul>
+     <div class="login-link">
+    <a href="userprofile.html">
+      <i class="fas fa-user-alt"></i>
+    </a>
+  </div>
+
+     <!-- Search icon and search bar toggle -->
+     <button id="quik-search-btn" type="button"><i class="fas fa-search"></i></button>
+  </div>
+
+  <!-- Search Box -->
+  <div class="nav-search-bar" id="search-bar">
+     <form id="search-form">
+        <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+        <span id="search-remove"><i class="fas fa-times"></i></span>
+     </form>
+  </div>
+
+
+<div class="container">
+   <h2>Shopping Cart</h2>
+
+   <div class="cart-items" id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+   </div>
+
+   <div class="cart-summary" id="cart-summary">
+      <h3>Cart Summary</h3>
+      <table class="cart-summary-table">
+         <thead>
+            <tr>
+               <th>Product</th>
+               <th>Price</th>
+               <th>Quantity</th>
+               <th>Total</th>
+               <th>Action</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Cart summary rows will be dynamically added here -->
+         </tbody>
+      </table>
+
+      <div class="cart-summary-total">
+         Total: EGP <span id="cart-total">0.00</span>
+      </div>
+
+      <div class="cart-buttons">
+         <a href="Menshopa.html">Continue Shopping</a>
+         <a href="Twinklecheckouta.html">Proceed to Checkout</a>
+      </div>
+   </div>
+</div>
+
+<div class="footer">
+   <div class="footer-content">
+      <div class="footer-section">
+         <h3>Explore Our Collection</h3>
+         <p>Discover the latest trends and timeless classics in our curated collection of apparel and accessories. From casual wear to elegant attire, find your style today.</p>
+      </div>
+
+      <div class="footer-section">
+         <h3>Customer Care</h3>
+         <p>Have questions? Contact our customer service team for assistance with orders, sizing, and more.</p>
+      </div>
+   </div>
+   <div class="footer-bottom">
+      <p>&copy; 2024 Twinkle Twinkle. All Rights Reserved.</p>
+   </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+   const catalogLink = document.getElementById('catalog-link');
+   const catalogMenu = document.getElementById('catalog-menu');
+   const searchBtn = document.getElementById('quik-search-btn');
+   const searchBar = document.getElementById('search-bar');
+   const searchRemove = document.getElementById('search-remove');
+   const cartItemsContainer = document.getElementById('cart-items');
+   const cartSummaryTable = document.querySelector('.cart-summary-table');
+   const cartTotalElement = document.getElementById('cart-total');
+
+   // Toggle catalog menu
+   catalogLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      catalogMenu.classList.toggle('active');
+   });
+
+   // Toggle search bar
+   searchBtn.addEventListener('click', function() {
+      searchBar.classList.toggle('active');
+   });
+
+   // Close search bar
+   searchRemove.addEventListener('click', function() {
+      searchBar.classList.remove('active');
+   });
+
+   // Sample cart items (replace with your actual data)
+   let cartItems = [
+      { id: 1, name: 'Product 1', price: 29.99, quantity: 2 },
+      { id: 2, name: 'Product 2', price: 49.99, quantity: 1 },
+      { id: 3, name: 'Product 3', price: 19.99, quantity: 3 }
+   ];
+
+   // Function to display cart items
+   function displayCartItems() {
+      cartItemsContainer.innerHTML = '';
+
+      cartItems.forEach(item => {
+         const cartItem = document.createElement('div');
+         cartItem.classList.add('cart-item');
+
+         // Example structure for cart item display
+         cartItem.innerHTML = `
+            <img src="https://via.placeholder.com/80" alt="${item.name}">
+            <div class="cart-item-info">
+               <h4>${item.name}</h4>
+               <p>Price: EGP ${item.price.toFixed(2)}</p>
+               <div class="quantity-adjust">
+                  <button class="quantity-decrease" onclick="adjustQuantity(${item.id}, -1)">-</button>
+                  <span>${item.quantity}</span>
+                  <button class="quantity-increase" onclick="adjustQuantity(${item.id}, 1)">+</button>
+               </div>
+            </div>
+            <button class="btn-remove" onclick="removeCartItem(${item.id})">Remove</button>
+         `;
+
+         cartItemsContainer.appendChild(cartItem);
+      });
+
+      displayCartSummary();
+   }
+
+   // Function to display cart summary
+   function displayCartSummary() {
+      cartSummaryTable.querySelector('tbody').innerHTML = '';
+
+      let total = 0;
+
+      cartItems.forEach(item => {
+         const row = document.createElement('tr');
+         row.innerHTML = `
+            <td>${item.name}</td>
+            <td>EGP ${item.price.toFixed(2)}</td>
+            <td>${item.quantity}</td>
+            <td>EGP ${(item.price * item.quantity).toFixed(2)}</td>
+            <td><button class="btn-remove" onclick="removeCartItem(${item.id})">Remove</button></td>
+         `;
+
+         cartSummaryTable.querySelector('tbody').appendChild(row);
+
+         total += item.price * item.quantity;
+      });
+
+      cartTotalElement.textContent = `EGP ${total.toFixed(2)}`;
+   }
+
+   // Function to adjust quantity of cart item
+   function adjustQuantity(itemId, change) {
+      const index = cartItems.findIndex(item => item.id === itemId);
+      if (index !== -1) {
+         cartItems[index].quantity += change;
+         if (cartItems[index].quantity < 1) {
+            cartItems[index].quantity = 1; // Ensure quantity doesn't drop below 1
+         }
+         displayCartItems();
+      }
+   }
+
+   // Function to remove cart item
+   function removeCartItem(itemId) {
+      cartItems = cartItems.filter(item => item.id !== itemId);
+      displayCartItems();
+   }
+
+   // Display cart items when page loads
+   displayCartItems();
+});
+</script>
+
+</body>
+</html>

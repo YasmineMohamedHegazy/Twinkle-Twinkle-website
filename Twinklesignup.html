@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Myv9Q2cdWghu/ED1dOT/ur2R84EsnIzVYh7RRcnY1cwF2mL3T1X4L3myeYU3R8KnHc6jJdc5yvLq7e2++TKg6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom styles for form */
+        .account-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff; /* Changed background color to white */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-head {
+            height: 200px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+
+        .title-head {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .button-md {
+            background-color: #fff; /* Changed background to white */
+            color: #000; /* Changed text color to black */
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .button-md:hover {
+            background-color: #eedcc2; /* Hover background color */
+            color: #000; /* Hover text color */
+        }
+
+        .btn {
+            background-color:#000055; /* Changed to match the desired color */
+            color: #fff;
+            padding: 10px 18px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: white; /* Hover background color */
+            color: black; /* Hover text color */
+        }
+
+        .heading-bx a {
+            text-decoration: underline; /* Underline the login link */
+        }
+
+        .m-b30 {
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .save-profile-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .save-profile-btn button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .save-profile-btn button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+   <h2></h2>
+   <div class="account-form-inner">
+       <div class="account-container">
+           <div class="heading-bx left">
+               <h2 class="title-head">Sign Up Now!</h2>
+               <p>Log in Your Account <a href="Twinklelogin.html">Click here</a></p><br>
+           </div>
+           <form class="contact-bx" action="Twinklehomepagea.html" method="POST">
+               <div class="row placeani">
+                   <div class="col-lg-12">
+                       <div class="form-group">
+                           <div class="input-group">
+                               <input name="fname" type="text" required="" class="form-control" placeholder="First Name">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-12">
+                       <div class="form-group">
+                           <div class="input-group">
+                               <input name="lname" type="text" required="" class="form-control" placeholder="Last Name">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-12">
+                       <div class="form-group">
+                           <div class="input-group">
+                               <input name="email" type="email" required="" class="form-control" placeholder="Your Email Address">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-12">
+                       <div class="form-group">
+                           <div class="input-group">
+                               <input name="Phone Number" type="Phonenumber" required="" class="form-control" placeholder="Phone Number">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-12">
+                       <div class="form-group">
+                           <div class="input-group">
+                               <input name="pass" type="password" class="form-control" required="" placeholder="Your Password">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-12 m-b30">
+                       <button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
+                   </div>
+               </div>
+           </form>
+       </div>
+   </div>
+</div>
+
+<!-- External JavaScripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+<script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+<script src="assets/vendors/counter/waypoints-min.js"></script>
+<script src="assets/vendors/counter/counterup.min.js"></script>
+<script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+<script src="assets/vendors/masonry/masonry.js"></script>
+<script src="assets/vendors/masonry/filter.js"></script>
+<script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/vendors/switcher/switcher.js"></script>
+
+</body>
+</html>
